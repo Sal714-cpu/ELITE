@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Divisi - ELITE UNIMED</title>
+    <style>
+        :root {
+            --primary-blue: #0288d1;
+            --dark-blue: #01579b;
+            --accent-gold: #fbc02d;
+            --light-bg: #f5fbfd;
+            --white: #ffffff;
+            --text-main: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            scroll-behavior: auto !important;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* HEADER KONSISTEN */
+        header {
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img { height: 50px; width: auto; }
+        .logo-text h2 { color: var(--primary-blue); font-size: 24px; font-weight: 800; }
+
+        nav { display: flex; gap: 15px; width: 100%; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* HERO SECTION DENGAN GAMBAR divisi.jpg DAN OVERLAY BIRU */
+        .hero {
+            padding: 100px 20px;
+            background-image: linear-gradient(135deg, rgba(1, 87, 155, 0.8) 0%, rgba(2, 136, 209, 0.7) 100%), url('divisi.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 5px solid var(--primary-blue);
+        }
+
+        .hero-logo-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero img { width: 150px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); font-weight: 300; letter-spacing: 1px;}
+
+        /* GRID DIVISI */
+        .section {
+            padding: 60px 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .divisi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .divisi-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            border-left: 6px solid var(--primary-blue);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .divisi-card:hover { transform: translateY(-5px); }
+        .divisi-card h3 { color: var(--dark-blue); margin-bottom: 15px; font-size: 1.5rem; }
+        .divisi-card p { font-size: 1rem; margin-bottom: 20px; color: #555; }
+
+        details {
+            background: #f0f9ff;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border: 1px solid #e0f2fe;
+        }
+
+        summary { font-weight: bold; color: var(--primary-blue); outline: none; font-size: 1rem; }
+
+        .anggota-list {
+            list-style: none;
+            padding-left: 0;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .anggota-list li {
+            font-size: 0.95rem;
+            padding: 5px 0;
+            color: #475569;
+            display: flex;
+            align-items: center;
+        }
+
+        .anggota-list li::before {
+            content: "•";
+            color: var(--accent-gold);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: 5px;
+        }
+
+        @media (min-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; padding: 15px 8%; }
+            .logo-container { margin-bottom: 0; }
+            nav { width: auto; gap: 25px; }
+            .hero { padding: 150px 20px; }
+            .hero img { width: 220px; }
+            .hero h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="elite.png" alt="Logo ELITE">
+            <div class="logo-text"><h2>ELITE</h2></div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="visi.html">Visi & Misi</a>
+            <a href="struktur.html">Struktur</a>
+            <a href="divisi.html" style="color: var(--accent-gold); border-bottom: 2px solid var(--accent-gold);">Divisi</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-logo-wrapper">
+            <img src="elite.png" alt="Logo Besar ELITE">
+        </div>
+        <h1>Divisi & Anggota</h1>
+        <p>Pilar Penggerak Inovasi ELITE</p>
+    </section>
+
+    <section class="section">
+        <div class="divisi-grid">
+            
+            <div class="divisi-card">
+                <h3>1. Elektronika</h3>
+                <p><strong>Ketua:</strong> Ano Jastin Sinaga</p>
+                <details>
+                    <summary>Klik untuk Jobdesk</summary>
+                    <p>Fokus pada perancangan sirkuit analog/digital, workshop pembuatan PCB, serta troubleshooting komponen keras hardware.</p>
+                </details>
+                <ul class="anggota-list">
+                    <strong>Anggota:</strong>
+                    <li>Tora Valentina Simatupang</li>
+                    <li>Philip Maloma Sinaga</li>
+                    <li>Melisa Triagustin</li>
+                    <li>Ahmad Fadli Al Husni</li>
+                </ul>
+            </div>
+
+            <div class="divisi-card" style="border-left-color: #4caf50;">
+                <h3>2. Energi Terbarukan</h3>
+                <p><strong>Ketua:</strong> Erwinsius Simamora</p>
+                <details>
+                    <summary>Klik untuk Jobdesk</summary>
+                    <p>Riset pengembangan panel surya, sistem monitoring energi mandiri, dan eksplorasi sumber energi hijau masa depan.</p>
+                </details>
+                <ul class="anggota-list">
+                    <strong>Anggota:</strong>
+                    <li>Sadat Zulgani</li>
+                    <li>N.A. Fadya Rahman</li>
+                    <li>Andri Saputra Harahap</li>
+                    <li>Joan Emanuella Sitorus</li>
+                </ul>
+            </div>
+
+            <div class="divisi-card" style="border-left-color: #ff9800;">
+                <h3>3. Robotika</h3>
+                <p><strong>Ketua:</strong> Muhammad Zikry AL-Banna Lubis</p>
+                <details>
+                    <summary>Klik untuk Jobdesk</summary>
+                    <p>Pengembangan robot cerdas, pemrograman mikrokontroler (Arduino/ESP32), dan integrasi sensor mekanik.</p>
+                </details>
+                <ul class="anggota-list">
+                    <strong>Anggota:</strong>
+                    <li>Zaky Atila Cafriano Hutabarat</li>
+                    <li>Angga Hermawan</li>
+                    <li>Rusdi Syafii Hutabarat</li>
+                    <li>Layninsius Trosky Syukran B Manalu</li>
+                </ul>
+            </div>
+
+            <div class="divisi-card" style="border-left-color: #673ab7;">
+                <h3>4. Otomasi Industri</h3>
+                <p><strong>Ketua:</strong> Rivan Permana Putra Simatupang</p>
+                <details>
+                    <summary>Klik untuk Jobdesk</summary>
+                    <p>Implementasi sistem kendali otomatis, PLC, SCADA, dan integrasi Internet of Things (IoT) pada dunia industri.</p>
+                </details>
+                <ul class="anggota-list">
+                    <strong>Anggota:</strong>
+                    <li>Syahara Ayu Ramadhani</li>
+                    <li>Agus Wisman Rambe</li>
+                    <li>Ahmad Hariri</li>
+                    <li>Agripa Parata Manalu</li>
+                </ul>
+            </div>
+
+            <div class="divisi-card" style="border-left-color: #fbc02d;">
+                <h3>5. Media dan Informasi</h3>
+                <p><strong>Ketua:</strong> Cut Syaffa Fazla</p>
+                <details>
+                    <summary>Klik untuk Jobdesk</summary>
+                    <p>Bertanggung jawab atas branding komunitas, desain grafis, pengelolaan sosial media, dan dokumentasi kegiatan.</p>
+                </details>
+                <ul class="anggota-list">
+                    <strong>Anggota:</strong>
+                    <li>Zul Khaizar</li>
+                    <li>Muhammad Daffa Rizky</li>
+                    <li>Natalia Purba</li>
+                    <li>Trinity Stevany Sihombing</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #94a3b8; font-size: 0.8rem; background: var(--white); border-top: 1px solid #e2e8f0; margin-top: 30px;">
+        &copy; 2026 ELITE FT UNIMED - Universitas Negeri Medan
+    </footer>
+
+</body>
+</html>

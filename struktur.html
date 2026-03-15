@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Struktur - ELITE UNIMED</title>
+    <style>
+        :root {
+            --primary-blue: #0288d1;
+            --dark-blue: #01579b;
+            --deep-navy: #0a2540;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-main: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* HEADER KONSISTEN */
+        header {
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img { height: 50px; width: auto; }
+        .logo-text h2 { color: var(--primary-blue); font-size: 24px; font-weight: 800; }
+
+        nav { display: flex; gap: 15px; width: 100%; justify-content: center; }
+        nav a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        nav a.active { color: var(--primary-blue); border-bottom: 2px solid var(--primary-blue); }
+
+        /* HERO SECTION DENGAN GAMBAR struktur.jpg */
+        .hero {
+            padding: 80px 20px;
+            background-color: var(--dark-blue);
+            /* Overlay gradasi biru agar teks dan logo tetap kontras di atas struktur.jpg */
+            background-image: linear-gradient(135deg, rgba(1, 87, 155, 0.8) 0%, rgba(2, 136, 209, 0.7) 100%), 
+                              url('struktur.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 5px solid var(--primary-blue);
+        }
+
+        .hero-logo-wrapper { margin-bottom: 25px; }
+        .hero img {
+            width: 220px;
+            filter: drop-shadow(0 12px 25px rgba(0,0,0,0.4));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .hero h1 { 
+            font-size: 2.6rem; 
+            margin-top: 10px; 
+            font-weight: 700; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p { 
+            font-size: 1.1rem;
+            opacity: 0.9; 
+            font-weight: 300; 
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        /* STRUKTUR SECTION */
+        .section {
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .node {
+            background: var(--white);
+            padding: 25px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(2, 136, 209, 0.08);
+            width: 100%;
+            max-width: 320px;
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .node-pembimbing {
+            border-top: 5px solid #00acc1;
+            background: #f0fdff;
+        }
+
+        .node small {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--primary-blue);
+            font-weight: 800;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .node .name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+        }
+
+        .line {
+            width: 2px;
+            height: 35px;
+            background: #cbd5e1;
+        }
+
+        .sub-core {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; padding: 15px 8%; }
+            .logo-container { margin-bottom: 0; }
+            nav { width: auto; gap: 30px; }
+            .sub-core { flex-direction: row; justify-content: center; gap: 40px; }
+            .hero { padding: 110px 20px; }
+            .hero img { width: 260px; }
+            .hero h1 { font-size: 3.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="elite.png" alt="Logo ELITE">
+            <div class="logo-text"><h2>ELITE</h2></div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="visi.html">Visi & Misi</a>
+            <a href="struktur.html" class="active">Struktur</a>
+            <a href="divisi.html">Divisi</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-logo-wrapper">
+            <img src="elite.png" alt="Logo Besar ELITE">
+        </div>
+        <h1>Struktur Organisasi</h1>
+        <p>Kepengurusan ELITE Periode 2026</p>
+    </section>
+
+    <section class="section">
+        
+        <div class="node node-pembimbing">
+            <small>Dosen Pembimbing</small>
+            <div class="name">Ir. Muhammad Aulia Rahman, S.T., M.T.</div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="node">
+            <small>Ketua Umum</small>
+            <div class="name">Syaifullah</div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="sub-core">
+            <div class="node" style="border-top-color: #00bcd4;">
+                <small>Sekretaris</small>
+                <div class="name">Adhinda Chyntia Gunawan</div>
+            </div>
+
+            <div class="line" style="display: block; @media (min-width: 768px) { display: none; }"></div>
+
+            <div class="node" style="border-top-color: #3f51b5;">
+                <small>Bendahara</small>
+                <div class="name">Angelina Amanda Sinaga</div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 50px 20px; color: #94a3b8; font-size: 0.85rem; background: var(--white); border-top: 1px solid #e2e8f0;">
+        &copy; 2026 ELITE FT UNIMED - Universitas Negeri Medan
+    </footer>
+
+</body>
+</html>
